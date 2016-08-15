@@ -1,0 +1,13 @@
+.is-wrapper {
+  width: 100%;
+  padding: 0 $is-wrapper-padding-horizontal;
+  overflow-y: hidden;
+  &.is-primary { background: $is-wrapper-primary; }
+  &.is-secondary { background: $is-wrapper-secondary; }
+  &.is-padding-small { padding: $is-wrapper-padding-small $is-wrapper-padding-horizontal; }
+  &.is-padding-medium { padding: $is-wrapper-padding-medium $is-wrapper-padding-horizontal; }
+  &.is-padding-large { padding: $is-wrapper-padding-large $is-wrapper-padding-horizontal; }
+  &.is-margin-small { margin: $is-wrapper-margin-small 0; }
+  &.is-margin-medium { margin: $is-wrapper-margin-medium 0; }
+  &.is-margin-large { margin: $is-wrapper-margin-large 0; }
+}

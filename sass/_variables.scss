@@ -1,0 +1,176 @@
+// colors
+$color-primary: #1ef1b7;
+$color-secondary: #1f2b4a;
+
+$color-error: #e74c3c;
+$color-danger: #f1c40f;
+$color-success: #2ecc71;
+$color-info: #3498db;
+
+$white: #ffffff;
+$black: #191919;
+
+// animations
+$is-transition-short-duration: .2s;
+$is-transition-medium-duration: .5s;
+$is-transition-long-duration: 1s;
+$is-transition-timing: ease;
+
+// disabled
+$is-disabled-opacity: 0.8;
+
+// selection
+$selection-background: $color-primary;
+$selection-color: $white;
+
+// border
+$border-width: 2px;
+$border-color: $color-secondary;
+$border-radius: 5px;
+
+// breakpoints
+$mobile: 768px;
+$tablet: 1025px;
+$desktop: 1224px;
+
+$is-mobile: "only screen and (min-width:#{$mobile})";
+$is-mobile-only: "only screen and (min-width:#{$mobile}) and (max-width:#{$tablet - 1})";
+$is-mobile-to-tablet: "only screen and (min-width:#{$mobile}) and (max-width:#{$desktop - 1})";
+
+$is-tablet: "only screen and (min-width:#{$tablet})";
+$is-tablet-only: "only screen and (min-width:#{$tablet}) and (max-width:#{$desktop - 1})";
+
+$is-desktop: "only screen and (min-width:#{$desktop})";
+
+// grid
+$has-columns-width: 1200px;
+
+$has-columns-margin-enabled: "yes"; // if you don't need the margin classes use "no", if you need it use "yes". This option exists, because with those margin classes the grid has to be compiled 3 times. To save you filesize disable it if not needed.
+$has-columns-margin-small-enabled: "yes"; // if you dont need margin small class use "no", if you need it use "yes";
+$has-columns-margin-small: 0.5%; // needs % value because it just decreases the width in order to add spaces
+$has-columns-margin-medium-enabled: "yes"; // if you dont need margin medium class use "no", if you need it use "yes";
+$has-columns-margin-medium: 1%; // needs % value because it just decreases the width in order to add spaces
+$has-columns-margin-large-enabled: "yes"; // if you dont need margin large class use "no", if you need it use "yes";
+$has-columns-margin-large: 1.5%; // needs % value because it just decreases the width in order to add spaces
+
+$is-columns-amount: 24; // columns which fit in one row
+$is-column-padding-small: 5px;
+$is-column-padding-medium: 15px;
+$is-column-padding-large: 25px;
+
+// wrapper
+$is-wrapper-padding-horizontal: 5%; // shoudn't be lower than "$has-columns-margin-large"
+
+$is-wrapper-padding-small: 25px;
+$is-wrapper-padding-medium: 50px;
+$is-wrapper-padding-large: 75px;
+
+$is-wrapper-margin-small: 25px;
+$is-wrapper-margin-medium: 50px;
+$is-wrapper-margin-large: 75px;
+
+$is-wrapper-primary: $color-primary;
+$is-wrapper-secondary: $color-secondary;
+
+// buttons
+$is-btn-color: $white;
+$is-btn-outline-color: $color-secondary;
+$is-btn-background: $color-secondary;
+$is-btn-color-hover: $white;
+$is-btn-outline-color-hover: darken($color-secondary, 10%);
+$is-btn-background-hover: darken($color-secondary, 10%);
+
+$is-btn-primary-color: $color-secondary;
+$is-btn-primary-outline-color: $color-primary;
+$is-btn-primary-background: $color-primary;
+$is-btn-primary-color-hover: $color-secondary;
+$is-btn-primary-outline-color-hover: darken($color-primary, 10%);
+$is-btn-primary-background-hover: darken($color-primary, 10%);
+
+$is-btn-secondary-color: $white;
+$is-btn-secondary-outline-color: $color-secondary;
+$is-btn-secondary-background: $color-secondary;
+$is-btn-secondary-color-hover: $white;
+$is-btn-secondary-outline-color-hover: darken($color-secondary, 10%);
+$is-btn-secondary-background-hover: darken($color-secondary, 10%);
+
+$is-btn-glow-factor: 0px 0px 10px 0px;
+
+$is-btn-small-padding: 5px 10px;
+$is-btn-small-fontsize: 18px;
+
+$is-btn-medium-padding: 15px 25px;
+$is-btn-medium-fontsize: 24px;
+
+$is-btn-large-padding: 25px 35px;
+$is-btn-large-fontsize: 34px;
+
+$btn-circle-small-size: 45px;
+$btn-circle-medium-size: 60px;
+$btn-circle-large-size: 80px;
+
+$is-btn-border-radius: "half"; // if set to half, than button borders on the left and right are completly round. otherwise use px value.
+
+// typo
+$is-hx-weight: 200;
+$is-hx-default: $black;
+$is-hx-primary: $color-primary;
+$is-hx-secondary: $color-secondary;
+
+$is-h1: 45px;
+$is-h1-weight: $is-hx-weight;
+
+$is-h2: 40px;
+$is-h2-weight: $is-hx-weight;
+
+$is-h3: 35px;
+$is-h3-weight: $is-hx-weight;
+
+$is-h4: 30px;
+$is-h4-weight: 400;
+
+$is-h5: 28px;
+$is-h5-weight: 400;
+
+$is-h6: 24px;
+$is-h6-weight: 400;
+
+$is-p-weight: 400;
+$is-p-default: $black;
+$is-p-primary: $color-primary;
+$is-p-secondary: $color-secondary;
+$is-p-small: 14px;
+$is-p-medium: 18px;
+$is-p-large: 24px;
+$is-p-margin-bottom: 25px;
+
+// form
+$is-label-color: $black;
+$is-label-fontsize: 24px;
+
+$is-input-color: $black;
+$is-input-background: $white;
+$is-input-border-color: $border-color;
+$is-input-border-color-focus: $color-primary;
+$is-input-placeholder-color: $border-color;
+$is-input-checked-color: $color-primary;
+$is-input-checked-glow-factor: $is-btn-glow-factor;
+$is-input-padding: 15px 25px;
+$is-input-fontsize: 18px;
+
+$is-input-border-radius: "half"; // if set to half, than button borders on the left and right are completly round. otherwise use px value.
+
+$is-checkbox-size: 25px;
+$is-radio-size: 25px;
+$is-checkbox-border-radius: $border-radius;
+$is-textarea-border-radius: $border-radius;
+
+// table
+$is-table-color: $black;
+$is-table-border: $border-color;
+$is-table-head-color: $color-primary;
+$is-table-head-background: $color-secondary;
+
+$is-table-cellpadding: 15px 25px;
+
+// 117 variables to customize

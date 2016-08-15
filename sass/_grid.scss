@@ -1,0 +1,174 @@
+.has-columns {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: flex-start;
+  max-width: $has-columns-width;
+  margin: 0px auto;
+  position: relative;
+
+  &.is-multiline { flex-wrap: wrap; }
+  &.is-top { align-items: flex-start; }
+  &.is-middle { align-items: center; }
+  &.is-bottom { align-items: flex-end; }
+  &.is-baseline { align-items: baseline; }
+  &.is-fullwidth { max-width: none; }
+
+  // margin
+  @if $has-columns-margin-enabled == "yes" {
+    @if $has-columns-margin-small-enabled == "yes" {
+      &.is-margin-small {
+        left: (-$has-columns-margin-small);
+        > .is-column {
+          margin: 0 $has-columns-margin-small;
+          @for $i from 0 through $is-columns-amount { &.is-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-small * 2); } }
+          @media #{$is-mobile} {
+            @for $i from 0 through $is-columns-amount { &.is-mobile-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-small * 2); } }
+          };
+          @media #{$is-tablet} {
+            @for $i from 0 through $is-columns-amount { &.is-tablet-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-small * 2); } }
+          };
+          @media #{$is-desktop} {
+            @for $i from 0 through $is-columns-amount { &.is-desktop-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-small * 2); } }
+          };
+        }
+      }
+    }
+
+    @if $has-columns-margin-medium-enabled == "yes" {
+      &.is-margin-medium {
+        left: (-$has-columns-margin-medium);
+        > .is-column {
+          margin: 0 $has-columns-margin-medium;
+          @for $i from 0 through $is-columns-amount { &.is-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-medium * 2); } }
+          @media #{$is-mobile} {
+            @for $i from 0 through $is-columns-amount { &.is-mobile-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-medium * 2); } }
+          };
+          @media #{$is-tablet} {
+            @for $i from 0 through $is-columns-amount { &.is-tablet-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-medium * 2); } }
+          };
+          @media #{$is-desktop} {
+            @for $i from 0 through $is-columns-amount { &.is-desktop-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-medium * 2); } }
+          };
+        }
+      }
+    }
+
+    @if $has-columns-margin-large-enabled == "yes" {
+      &.is-margin-large {
+        left: (-$has-columns-margin-large);
+        > .is-column {
+          margin: 0 $has-columns-margin-large;
+          @for $i from 0 through $is-columns-amount { &.is-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-large * 2); } }
+          @media #{$is-mobile} {
+            @for $i from 0 through $is-columns-amount { &.is-mobile-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-large * 2); } }
+          };
+          @media #{$is-tablet} {
+            @for $i from 0 through $is-columns-amount { &.is-tablet-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-large * 2); } }
+          };
+          @media #{$is-desktop} {
+            @for $i from 0 through $is-columns-amount { &.is-desktop-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-large * 2); } }
+          };
+        }
+      }
+    }
+  }
+}
+
+.is-column {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+
+  // small
+  &.is-small {
+    -webkit-box-flex: 0;
+    flex: none;
+    width: auto;
+  }
+  @media #{$is-mobile} {
+    &.is-small {
+      -webkit-box-flex: 0;
+      -ms-flex: none;
+      width: auto;
+    }
+  };
+  @media #{$is-tablet} {
+    &.is-small {
+      -webkit-box-flex: 0;
+      flex: none;
+      width: auto;
+    }
+  };
+  @media #{$is-desktop} {
+    &.is-small {
+      -webkit-box-flex: 0;
+      flex: none;
+      width: auto;
+    }
+  };
+
+  // size
+  @for $i from 0 through $is-columns-amount { &.is-#{$i} {
+    width: 100% / $is-columns-amount * $i;
+    -webkit-box-flex: 0;
+    flex: none;
+  } }
+  @media #{$is-mobile} {
+    @for $i from 0 through $is-columns-amount { &.is-mobile-#{$i} {
+      width: 100% / $is-columns-amount * $i;
+      -webkit-box-flex: 0;
+      flex: none;
+    } }
+  };
+  @media #{$is-tablet} {
+    @for $i from 0 through $is-columns-amount { &.is-tablet-#{$i} {
+      width: 100% / $is-columns-amount * $i;
+      -webkit-box-flex: 0;
+      flex: none;
+    } }
+  };
+  @media #{$is-desktop} {
+    @for $i from 0 through $is-columns-amount { &.is-desktop-#{$i} {
+      width: 100% / $is-columns-amount * $i;
+      -webkit-box-flex: 0;
+      flex: none;
+    } }
+  };
+
+  // order
+  @for $i from 1 through $is-columns-amount { &.is-nth-#{$i} { order: $i; } }
+  @media #{$is-mobile} {
+    @for $i from 1 through $is-columns-amount { &.is-mobile-nth-#{$i} { order: $i; } }
+  };
+  @media #{$is-tablet} {
+    @for $i from 1 through $is-columns-amount { &.is-tablet-nth-#{$i} { order: $i; } }
+  };
+  @media #{$is-desktop} {
+    @for $i from 1 through $is-columns-amount { &.is-desktop-nth-#{$i} { order: $i; } }
+  };
+
+  // padding
+  &.is-padding-small { padding: 0 $is-column-padding-small; }
+  &.is-padding-medium { padding: 0 $is-column-padding-medium; }
+  &.is-padding-large { padding: 0 $is-column-padding-large; }
+  @media #{$is-mobile} {
+    &.is-mobile-padding-small { padding: 0 $is-column-padding-small; }
+    &.is-mobile-padding-medium { padding: 0 $is-column-padding-medium; }
+    &.is-mobile-padding-large { padding: 0 $is-column-padding-large; }
+  };
+  @media #{$is-tablet} {
+    &.is-tablet-padding-small { padding: 0 $is-column-padding-small; }
+    &.is-table-padding-medium { padding: 0 $is-column-padding-medium; }
+    &.is-table-padding-large { padding: 0 $is-column-padding-large; }
+  };
+  @media #{$is-desktop} {
+    &.is-desktop-padding-small { padding: 0 $is-column-padding-small; }
+    &.is-desktop-padding-medium { padding: 0 $is-column-padding-medium; }
+    &.is-desktop-padding-large { padding: 0 $is-column-padding-large; }
+  };
+}

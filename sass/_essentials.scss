@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+.is-transition-short { transition: all $is-transition-short-duration $is-transition-timing; }
+.is-transition-medium { transition: all $is-transition-medium-duration $is-transition-timing; }
+.is-transition-long { transition: all $is-transition-long-duration $is-transition-timing; }
+
+.is-disabled {
+  opacity: $is-disabled-opacity;
+}
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0px;
+}
+
+img, svg {
+  max-width: 100%;
+}
+
+::-moz-selection {
+  background: $selection-background;
+  color: $selection-color;
+  text-shadow: none;
+}
+::selection {
+  background: $selection-background;
+  color: $selection-color;
+  text-shadow: none;
+}

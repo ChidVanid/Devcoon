@@ -1,0 +1,16 @@
+table {
+  border-collapse: collapse;
+  color: $is-table-color;
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+  padding: $is-table-cellpadding;
+  border: $border-width solid $is-table-border;
+}
+
+th {
+  color: $is-table-head-color;
+  background: $is-table-head-background;
+}

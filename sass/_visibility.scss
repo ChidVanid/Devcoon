@@ -1,0 +1,31 @@
+.is-hidden, .is-hidden-to-mobile, .is-hidden-to-tablet, .is-hidden-to-desktop, .is-hidden-up {
+  display: none;
+}
+
+@media #{$is-mobile} {
+  .is-mobile-hidden, .is-mobile-hidden-to-tablet, .is-mobile-hidden-to-desktop, .is-mobile-hidden-up {
+    display: none;
+  }
+
+  .is-hidden, .is-hidden-to-mobile {
+    display: block;
+  }
+};
+@media #{$is-tablet} {
+  .is-tablet-hidden, .is-tablet-hidden-to-desktop, .is-tablet-hidden-up {
+    display: none;
+  }
+
+  .is-mobile-hidden, .is-hidden-to-tablet, .is-mobile-hidden-to-tablet {
+    display: block;
+  }
+};
+@media #{$is-desktop} {
+  .is-desktop-hidden .is-desktop-hidden-up {
+    display: none;
+  }
+
+  .is-tablet-hidden, .is-hidden-to-desktop, .is-mobile-hidden-to-desktop, .is-tablet-hidden-to-desktop, .is-hidden-to-desktop {
+    display: block;
+  }
+};

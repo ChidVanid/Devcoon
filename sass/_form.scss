@@ -1,0 +1,158 @@
+label {
+  color: $is-label-color;
+  font-size: $is-label-fontsize;
+  margin-top: 15px;
+  display: inline-block;
+  margin-right: 15px;
+  cursor: pointer;
+
+  &.is-error { color: $color-error; }
+  &.is-danger { color: $color-danger; }
+  &.is-success { color: $color-success; }
+  &.is-info { color: $color-info; }
+
+  &.is-top {
+    display: block;
+    margin: 15px 0 10px;
+  }
+}
+
+input[type="text"], input[type="date"], input[type="email"], input[type="number"],
+input[type="search"], input[type="tel"], input[type="url"], select, textarea {
+  color: $is-input-color;
+  background: $is-input-background;
+  border: $border-width solid $border-color;
+  padding: $is-input-padding;
+  outline: 0;
+  font-size: $is-input-fontsize;
+  @if $is-input-border-radius == "half" {
+    border-radius: 45px;
+  } else {
+    border-radius: $is-input-border-radius;
+  }
+
+  &:focus, &:active {
+    border-color: $is-input-border-color-focus;
+  }
+
+  &.is-glow {
+    box-shadow: $is-input-checked-glow-factor $border-color;
+    &:focus, &:active { box-shadow: $is-input-checked-glow-factor $is-input-border-color-focus; }
+  }
+
+  &.is-transparent {
+    background: transparent;
+  }
+
+  &.is-line {
+    border: 0;
+    border-bottom: $border-width solid $border-color;
+    border-radius: 0;
+
+    &.is-transparent {
+      padding-left: 0;
+    }
+  }
+
+  &.is-error { border-color: $color-error; }
+  &.is-danger { border-color: $color-danger; }
+  &.is-success { border-color: $color-success; }
+  &.is-info { border-color: $color-info; }
+}
+
+textarea {
+  border-radius: $is-textarea-border-radius;
+  max-width: 100%;
+  width: 100%;
+  min-height: 300px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  display: none;
+  height: 0;
+  width: 0;
+  opacity: 0;
+
+  + label {
+    display: inline-block;
+    min-width: 150px;
+
+    span {
+      display: inline-block;
+      position: relative;
+      margin-right: 15px;
+      background: $is-input-background;
+      border: $border-width solid $is-input-border-color;
+    }
+  }
+
+  &.is-error + label span { border-color: $color-error; }
+  &.is-danger + label span { border-color: $color-danger; }
+  &.is-success + label span { border-color: $color-success; }
+  &.is-info + label span { border-color: $color-info; }
+
+  &.is-transparent + label span {
+    background: transparent;
+  }
+}
+
+input[type="radio"] {
+  + label span {
+    height: $is-radio-size;
+    width: $is-radio-size;
+    border-radius: $is-radio-size / 2;
+  }
+
+  &:checked + label span:before {
+    position: absolute;
+    content: "";
+    margin: 3px;
+    height: $is-radio-size - 10;
+    width: $is-radio-size - 10;
+    border-radius: ($is-radio-size - 5) / 2;
+    background: $is-input-checked-color;
+  }
+
+  &.is-glow:checked + label span:before {
+    box-shadow: $is-input-checked-glow-factor $is-input-checked-color;
+  }
+}
+
+input[type="checkbox"] {
+  + label span {
+    height: $is-checkbox-size;
+    width: $is-checkbox-size;
+    border-radius: $border-radius;
+  }
+
+  &:checked + label span:before {
+    position: absolute;
+    content: "";
+    background: $is-input-checked-color;
+    height: 2px;
+    bottom: 6px;
+    width: 10px;
+    transform: rotate(45deg);
+  }
+
+  &:checked + label span:after {
+    position: absolute;
+    content: "";
+    background: $is-input-checked-color;
+    height: 2px;
+    bottom: 8px;
+    width: 17px;
+    transform: rotate(-45deg);
+    left: 5px;
+  }
+
+  &.is-glow:checked + label span:before, &.is-glow:checked + label span:after {
+    box-shadow: $is-input-checked-glow-factor $is-input-checked-color;
+  }
+}
+
+::-webkit-input-placeholder { color: $is-input-placeholder-color; }
+::-moz-placeholder { color: $is-input-placeholder-color; }
+:-ms-input-placeholder { color: $is-input-placeholder-color; }
+:-moz-placeholder { color: $is-input-placeholder-color; }
+::-moz-placeholder { opacity: 1; }
