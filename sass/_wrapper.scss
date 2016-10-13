@@ -1,13 +1,47 @@
+.has-wrappers {
+  @media #{$is-tablet} {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-content: flex-start;
+
+    > .is-wrapper {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      -ms-flex-negative: 1;
+      flex-shrink: 1;
+    }
+  }
+}
+
 .is-wrapper {
   width: 100%;
   padding: 0 $is-wrapper-padding-horizontal;
   overflow-y: hidden;
-  &.is-primary { background: $is-wrapper-primary; }
-  &.is-secondary { background: $is-wrapper-secondary; }
+  @each $name, $color in $color-map { &.is-#{$name} { background-color: $color; } }
   &.is-padding-small { padding: $is-wrapper-padding-small $is-wrapper-padding-horizontal; }
   &.is-padding-medium { padding: $is-wrapper-padding-medium $is-wrapper-padding-horizontal; }
   &.is-padding-large { padding: $is-wrapper-padding-large $is-wrapper-padding-horizontal; }
+  &.is-padding-top-small { padding-top: $is-wrapper-padding-small; }
+  &.is-padding-top-medium { padding-top: $is-wrapper-padding-medium; }
+  &.is-padding-top-large { padding-top: $is-wrapper-padding-large; }
+  &.is-padding-bottom-small { padding-bottom: $is-wrapper-padding-small; }
+  &.is-padding-bottom-medium { padding-bottom: $is-wrapper-padding-medium; }
+  &.is-padding-bottom-large { padding-bottom: $is-wrapper-padding-large; }
   &.is-margin-small { margin: $is-wrapper-margin-small 0; }
   &.is-margin-medium { margin: $is-wrapper-margin-medium 0; }
   &.is-margin-large { margin: $is-wrapper-margin-large 0; }
+  &.is-margin-top-small { margin-top: $is-wrapper-margin-small; }
+  &.is-margin-top-medium { margin-top: $is-wrapper-margin-medium; }
+  &.is-margin-top-large { margin-top: $is-wrapper-margin-large; }
+  &.is-margin-bottom-small { margin-bottom: $is-wrapper-margin-small; }
+  &.is-margin-bottom-medium { margin-bottom: $is-wrapper-margin-medium; }
+  &.is-margin-bottom-large { margin-bottom: $is-wrapper-margin-large; }
+
+  &.is-split {
+    @media #{$is-tablet} { width: 50%; }
+  }
 }

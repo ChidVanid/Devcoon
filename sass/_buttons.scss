@@ -2,131 +2,169 @@
   color: $is-btn-color;
   background: $is-btn-background;
   padding: $is-btn-medium-padding;
-  font-size: $is-btn-medium-fontsize;
+  font-size: $is-btn-medium-fontsize * 0.8;
   border: $border-width solid $is-btn-background;
   outline: 0;
   text-decoration: none;
   margin-bottom: 10px;
   display: inline-block;
   cursor: pointer;
-  @extend .is-transition-short;
+  @if $critical == "no" or $critical == "full" { @extend .is-transition-short; }
+  @media #{$is-tablet} { font-size: $is-btn-medium-fontsize; }
   @if $is-btn-border-radius == "half" {
     border-radius: 30px;
   } else {
     border-radius: $is-btn-border-radius;
   }
 
-  &:hover {
-    color: $is-btn-color-hover;
-    background: $is-btn-background-hover;
-    border-color: $is-btn-background-hover;
-  }
-
-  &:focus, &:active {
-    transform: scale(1.05);
-  }
-
-  &.is-block {
-    display: block;
-  }
-
-  &.is-small {
-    padding: $is-btn-small-padding;
-    font-size: $is-btn-small-fontsize;
-    @if $is-btn-border-radius == "half" { border-radius: 25px; }
-  }
-
-  &.is-large {
-    padding: $is-btn-large-padding;
-    font-size: $is-btn-large-fontsize;
-    @if $is-btn-border-radius == "half" { border-radius: 45px; }
-  }
-
-  &.is-primary {
-    background: $is-btn-primary-background;
-    border-color: $is-btn-primary-background;
-    color: $is-btn-primary-color;
+  @if $critical == "no" or $critical == "full" {
     &:hover {
-      background: $is-btn-primary-background-hover;
-      border-color: $is-btn-primary-background-hover;
-      color: $is-btn-primary-color-hover;
+      color: $is-btn-color-hover;
+      background: $is-btn-background-hover;
+      border-color: $is-btn-background-hover;
     }
-  }
 
-  &.is-secondary {
-    background: $is-btn-secondary-background;
-    border-color: $is-btn-secondary-background;
-    color: $is-btn-secondary-color;
-    &:hover {
-      background: $is-btn-secondary-background-hover;
-      border-color: $is-btn-secondary-background-hover;
-      color: $is-btn-secondary-color-hover;
+    &:focus, &:active {
+      transform: scale(1.05);
     }
-  }
 
-  &.is-glow {
-    box-shadow: $is-btn-glow-factor $is-btn-background;
+    &.is-block {
+      display: block;
+    }
 
-    &.is-primary { box-shadow: $is-btn-glow-factor $is-btn-primary-background; }
-    &.is-secondary { box-shadow: $is-btn-glow-factor $is-btn-secondary-background; }
-  }
+    &.is-fullwidth {
+      width: 100%;
+    }
 
-  &.is-outline {
-    background: transparent;
-    border: $border-width solid $is-btn-outline-color;
-    color: $is-btn-outline-color;
-    &:hover {
-      color: $is-btn-color;
-      background: $is-btn-background;
-      border-color: $is-btn-background;
+    &.is-small {
+      padding: $is-btn-small-padding;
+      font-size: $is-btn-small-fontsize * 0.8;
+      @media #{$is-tablet} { font-size: $is-btn-small-fontsize; }
+      @if $is-btn-border-radius == "half" { border-radius: 25px; }
+    }
+
+    &.is-large {
+      padding: $is-btn-large-padding;
+      font-size: $is-btn-large-fontsize * 0.8;
+      @media #{$is-tablet} { font-size: $is-btn-large-fontsize; }
+      @if $is-btn-border-radius == "half" { border-radius: 45px; }
     }
 
     &.is-primary {
-      border-color: $is-btn-primary-outline-color;
-      color: $is-btn-primary-outline-color;
+      background: $is-btn-primary-background;
+      border-color: $is-btn-primary-background;
+      color: $is-btn-primary-color;
       &:hover {
-        background: $is-btn-primary-background;
-        border-color: $is-btn-primary-background;
-        color: $is-btn-primary-color;
+        background: $is-btn-primary-background-hover;
+        border-color: $is-btn-primary-background-hover;
+        color: $is-btn-primary-color-hover;
       }
     }
 
     &.is-secondary {
-      border-color: $is-btn-secondary-outline-color;
-      color: $is-btn-secondary-outline-color;
+      background: $is-btn-secondary-background;
+      border-color: $is-btn-secondary-background;
+      color: $is-btn-secondary-color;
       &:hover {
-        background: $is-btn-secondary-background;
-        border-color: $is-btn-secondary-background;
-        color: $is-btn-secondary-color;
+        background: $is-btn-secondary-background-hover;
+        border-color: $is-btn-secondary-background-hover;
+        color: $is-btn-secondary-color-hover;
       }
     }
-  }
 
-  &.is-circle {
-    padding: 0;
-    border-radius: 50%;
-    vertical-align: top;
-    position: relative;
-    height: $btn-circle-medium-size;
-    width: $btn-circle-medium-size;
+    &.is-glow {
+      box-shadow: $is-btn-glow-factor $is-btn-background;
 
-    > * {
-      position: absolute;
-      max-height: 100%;
-      max-width: 100%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      &.is-primary { box-shadow: $is-btn-glow-factor $is-btn-primary-background; }
+      &.is-secondary { box-shadow: $is-btn-glow-factor $is-btn-secondary-background; }
     }
 
-    &.is-small {
-      height: $btn-circle-small-size;
-      width: $btn-circle-small-size;
+    &.is-outline {
+      background: transparent;
+      border: $border-width solid $is-btn-outline-color;
+      color: $is-btn-outline-color;
+      &:hover {
+        color: $is-btn-color;
+        background: $is-btn-background;
+        border-color: $is-btn-background;
+      }
+
+      &.is-primary {
+        border-color: $is-btn-primary-outline-color;
+        color: $is-btn-primary-outline-color;
+        &:hover {
+          background: $is-btn-primary-background;
+          border-color: $is-btn-primary-background;
+          color: $is-btn-primary-color;
+        }
+      }
+
+      &.is-secondary {
+        border-color: $is-btn-secondary-outline-color;
+        color: $is-btn-secondary-outline-color;
+        &:hover {
+          background: $is-btn-secondary-background;
+          border-color: $is-btn-secondary-background;
+          color: $is-btn-secondary-color;
+        }
+      }
     }
 
-    &.is-large {
-      height: $btn-circle-large-size;
-      width: $btn-circle-large-size;
+    &.is-grouped {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-right: 0;
+
+      &.is-outline {
+        border-right-width: 0;
+      }
+
+      + input[type="text"], + input[type="date"], + input[type="email"], + input[type="number"],
+      input[type="search"], + input[type="tel"], + input[type="url"], + select, + .is-btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-left: 0;
+      }
+    }
+
+    &.is-form {
+      padding: $is-input-padding;
+      font-size: $is-input-fontsize;
+      margin-bottom: 0;
+      vertical-align: top;
+
+      &.is-grouped {
+        margin-right: -5px;
+      }
+    }
+
+    &.is-circle {
+      padding: 0;
+      border-radius: 50%;
+      vertical-align: top;
+      position: relative;
+      overflow: hidden;
+      height: $btn-circle-medium-size;
+      width: $btn-circle-medium-size;
+
+      > * {
+        position: absolute;
+        max-height: 100%;
+        max-width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &.is-small {
+        height: $btn-circle-small-size;
+        width: $btn-circle-small-size;
+      }
+
+      &.is-large {
+        height: $btn-circle-large-size;
+        width: $btn-circle-large-size;
+      }
     }
   }
 }

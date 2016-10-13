@@ -1,75 +1,105 @@
+
+
 h1, h2, h3, h4, h5, h6 {
   color: $is-hx-default;
   margin: 10px 0 25px;
   line-height: 1.4;
-  &.is-primary { color: $is-hx-primary; }
-  &.is-secondary { color: $is-hx-secondary; }
-  &.is-error { color: $color-error; }
-  &.is-danger { color: $color-danger; }
-  &.is-success { color: $color-success; }
-  &.is-info { color: $color-info; }
-  &.is-white { color: $white; }
-  &.is-black { color: $black; }
-  &.is-uppercase { text-transform: uppercase; }
-  &.is-left { text-align: left; }
-  &.is-right { text-align: right; }
-  &.is-center { text-align: center; }
+  @each $name, $color in $color-map { &.is-#{$name}, > .is-#{$name} { color: $color; } }
+  &.is-uppercase, > .is-uppercase { text-transform: uppercase; }
+  &.is-left, > .is-left { text-align: left; }
+  &.is-right, > .is-right { text-align: right; }
+  &.is-center, > .is-center { text-align: center; }
+  span { display: block; }
 }
 
-h1 {
-  font-size: $is-h1;
+h1, .h1 {
+  font-size: $is-h1 * 0.8;
   font-weight: $is-h1-weight;
   strong, b { font-weight: $is-h1-weight + 200; }
+  span { font-size: $is-h1 * 0.4; }
+  @media #{$is-tablet} { font-size: $is-h1;
+    span { font-size: $is-h1 * 0.5; }
+  }
 }
 
-h2 {
-  font-size: $is-h2;
+h2, .h2 {
+  font-size: $is-h2 * 0.8;
   font-weight: $is-h2-weight;
   strong, b { font-weight: $is-h2-weight + 200; }
+  span { font-size: $is-h2 * 0.5; }
+  @media #{$is-tablet} { font-size: $is-h2;
+    span { font-size: $is-h2 * 0.6; }
+  }
 }
 
-h3 {
-  font-size: $is-h3;
+h3, .h3 {
+  font-size: $is-h3 * 0.8;
   font-weight: $is-h3-weight;
   strong, b { font-weight: $is-h3-weight + 200; }
+  span { font-size: $is-h3 * 0.55; }
+  @media #{$is-tablet} { font-size: $is-h3;
+    span { font-size: $is-h3 * 0.65; }
+  }
 }
 
-h4 {
-  font-size: $is-h4;
+h4, .h4 {
+  font-size: $is-h4 * 0.8;
   font-weight: $is-h4-weight;
   strong, b { font-weight: $is-h4-weight + 200; }
+  span { font-size: $is-h4 * 0.6; }
+  @media #{$is-tablet} { font-size: $is-h4;
+    span { font-size: $is-h4 * 0.7; }
+  }
 }
 
-h5 {
-  font-size: $is-h5;
+h5, .h5 {
+  font-size: $is-h5 * 0.8;
   font-weight: $is-h5-weight;
   strong, b { font-weight: $is-h5-weight + 200; }
+  span { font-size: $is-h5 * 0.7; }
+  @media #{$is-tablet} { font-size: $is-h5;
+    span { font-size: $is-h5 * 0.8; }
+  }
 }
 
-h6 {
-  font-size: $is-h6;
+h6, .h6 {
+  font-size: $is-h6 * 0.8;
   font-weight: $is-h6-weight;
   strong, b { font-weight: $is-h6-weight + 200; }
+  span { font-size: $is-h6 * 0.7; }
+  @media #{$is-tablet} { font-size: $is-h6;
+    span { font-size: $is-h6 * 0.8; }
+  }
 }
 
 p {
   font-weight: $is-p-weight;
-  font-size: $is-p-medium;
+  font-size: $is-p-medium * 0.8;
   color: $is-p-default;
   margin-bottom: $is-p-margin-bottom;
   line-height: 1.6;
-  &.is-primary { color: $is-p-primary; }
-  &.is-secondary { color: $is-p-secondary; }
-  &.is-error { color: $color-error; }
-  &.is-danger { color: $color-danger; }
-  &.is-success { color: $color-success; }
-  &.is-info { color: $color-info; }
-  &.is-white { color: $white; }
-  &.is-black { color: $black; }
+  @media #{$is-tablet} { font-size: $is-p-medium; }
+  @each $name, $color in $color-map { &.is-#{$name}, > .is-#{$name} { color: $color; } }
   &.is-left { text-align: left; }
   &.is-right { text-align: right; }
   &.is-center { text-align: center; }
-  &.is-small { font-size: $is-p-small; }
-  &.is-large { font-size: $is-p-large; }
+  &.is-small { font-size: $is-p-small * 0.8; }
+  @media #{$is-tablet} { &.is-small { font-size: $is-p-small; } }
+  &.is-large { font-size: $is-p-large * 0.8; }
+  @media #{$is-tablet} { &.is-large { font-size: $is-p-large; } }
   strong, b { font-weight: $is-p-weight + 200; }
 }
+
+a {
+  text-decoration: none;
+  color: $is-a-color;
+  font-weight: $is-a-weight;
+  @extend .is-transition-short;
+
+  &:hover {
+    color: $is-a-color-hover;
+  }
+}
+
+strong, b { font-weight: $is-p-weight + 200; }
+small { font-size: $is-p-medium * 0.4 }

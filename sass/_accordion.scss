@@ -1,0 +1,51 @@
+@if $is-accordion-enabled == "yes" {
+  .is-accordion {
+    margin: $is-accordion-margin;
+
+    .is-accordion-trigger {
+      position: relative;
+      background: $is-accordion-trigger-color;
+      border: $is-accordion-trigger-border;
+      padding: $is-accordion-trigger-padding;
+      border-radius: $is-accordion-trigger-border-radius;
+      cursor: pointer;
+
+      > * {
+        margin: 0;
+        color: $is-accordion-trigger-font-color;
+      }
+
+      &:before, &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background: $is-accordion-icon-color;
+        height: $is-accordion-icon-stroke-height;
+        width: $is-accordion-icon-stroke-width;
+        top: 50%;
+        margin-top: $is-accordion-icon-stroke-height / 2;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+        right: $is-accordion-icon-right-space + $is-accordion-icon-stroke-width / 1.25 - 1;
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+        right: $is-accordion-icon-right-space;
+      }
+    }
+
+    .is-accordion-content {
+      padding: $is-accordion-content-padding;
+      border: $border-width solid $border-color;
+      background: $is-accordion-content-color;
+      border-radius: $is-accordion-trigger-border-radius;
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

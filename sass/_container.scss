@@ -1,0 +1,16 @@
+.is-container {
+  width: 100%;
+  margin: 0px auto;
+  max-width: $is-container-width;
+
+  @media #{$is-tablet} {
+    .is-split & {
+      max-width: $is-container-width / 2;
+      float: right;
+    }
+
+    .is-split:nth-of-type(odd) & {
+      float: left;
+    }
+  }
+}

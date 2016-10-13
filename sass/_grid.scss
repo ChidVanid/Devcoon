@@ -1,21 +1,21 @@
 .has-columns {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  align-content: flex-start;
-  max-width: $has-columns-width;
-  margin: 0px auto;
-  position: relative;
+  @if $critical == "yes" or $critical == "full" {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-content: flex-start;
+    position: relative;
 
-  &.is-multiline { flex-wrap: wrap; }
-  &.is-top { align-items: flex-start; }
-  &.is-middle { align-items: center; }
-  &.is-bottom { align-items: flex-end; }
-  &.is-baseline { align-items: baseline; }
-  &.is-fullwidth { max-width: none; }
+    &.is-multiline { flex-wrap: wrap; }
+    &.is-top { align-items: flex-start; }
+    &.is-middle { align-items: center; }
+    &.is-bottom { align-items: flex-end; }
+    &.is-baseline { align-items: baseline; }
+    &.is-fullwidth { max-width: none; }
+  }
 
   // margin
-  @if $has-columns-margin-enabled == "yes" {
+  @if $has-columns-margin-enabled == "yes" and $critical == "no" or $has-columns-margin-enabled == "yes" and $critical == "full" {
     @if $has-columns-margin-small-enabled == "yes" {
       &.is-margin-small {
         left: (-$has-columns-margin-small);
@@ -75,100 +75,147 @@
   }
 }
 
+%flex-none { flex: none; }
+%flex-mobile-none {
+  @media #{$is-mobile} { flex: none; } }
+%flex-tablet-none {
+  @media #{$is-tablet} { flex: none; } }
+%flex-desktop-none {
+  @media #{$is-desktop} { flex: none; } }
+
 .is-column {
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
+  @if $critical == "yes" or $critical == "full" {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    @each $name, $color in $color-map { &.is-#{$name} { background-color: $color; } }
+  }
 
   // small
-  &.is-small {
-    -webkit-box-flex: 0;
-    flex: none;
-    width: auto;
+  @if $critical == "no" or $critical == "full" {
+    &.is-small {
+      -webkit-box-flex: 0;
+      flex: none;
+      width: auto;
+    }
+    @media #{$is-mobile} {
+      &.is-mobile-small {
+        -webkit-box-flex: 0;
+        -ms-flex: none;
+        width: auto;
+      }
+    }
+    @media #{$is-tablet} {
+      &.is-tablet-small {
+        -webkit-box-flex: 0;
+        flex: none;
+        width: auto;
+      }
+    }
+    @media #{$is-desktop} {
+      &.is-desktop-small {
+        -webkit-box-flex: 0;
+        flex: none;
+        width: auto;
+      }
+    }
   }
-  @media #{$is-mobile} {
-    &.is-small {
-      -webkit-box-flex: 0;
-      -ms-flex: none;
-      width: auto;
-    }
-  };
-  @media #{$is-tablet} {
-    &.is-small {
-      -webkit-box-flex: 0;
-      flex: none;
-      width: auto;
-    }
-  };
-  @media #{$is-desktop} {
-    &.is-small {
-      -webkit-box-flex: 0;
-      flex: none;
-      width: auto;
-    }
-  };
 
   // size
-  @for $i from 0 through $is-columns-amount { &.is-#{$i} {
-    width: 100% / $is-columns-amount * $i;
-    -webkit-box-flex: 0;
-    flex: none;
-  } }
-  @media #{$is-mobile} {
-    @for $i from 0 through $is-columns-amount { &.is-mobile-#{$i} {
+
+  @if $critical == "yes" or $critical == "full" {
+    @for $i from 0 through $is-columns-amount { &.is-#{$i} {
       width: 100% / $is-columns-amount * $i;
-      -webkit-box-flex: 0;
-      flex: none;
+      @extend %flex-none;
     } }
-  };
-  @media #{$is-tablet} {
-    @for $i from 0 through $is-columns-amount { &.is-tablet-#{$i} {
-      width: 100% / $is-columns-amount * $i;
-      -webkit-box-flex: 0;
-      flex: none;
-    } }
-  };
-  @media #{$is-desktop} {
-    @for $i from 0 through $is-columns-amount { &.is-desktop-#{$i} {
-      width: 100% / $is-columns-amount * $i;
-      -webkit-box-flex: 0;
-      flex: none;
-    } }
-  };
+
+    @for $i from 0 through $is-columns-amount { &.is-mobile-#{$i} { @extend %flex-mobile-none; } }
+    @media #{$is-mobile} {
+      @for $i from 0 through $is-columns-amount { &.is-mobile-#{$i} {
+        width: 100% / $is-columns-amount * $i;
+      } }
+    }
+
+    @for $i from 0 through $is-columns-amount { &.is-tablet-#{$i} { @extend %flex-tablet-none; } }
+    @media #{$is-tablet} {
+      @for $i from 0 through $is-columns-amount { &.is-tablet-#{$i} {
+        width: 100% / $is-columns-amount * $i;
+      } }
+    }
+
+    @for $i from 0 through $is-columns-amount { &.is-desktop-#{$i} { @extend %flex-desktop-none; } }
+    @media #{$is-desktop} {
+      @for $i from 0 through $is-columns-amount { &.is-desktop-#{$i} {
+        width: 100% / $is-columns-amount * $i;
+      } }
+    }
+  }
 
   // order
-  @for $i from 1 through $is-columns-amount { &.is-nth-#{$i} { order: $i; } }
-  @media #{$is-mobile} {
-    @for $i from 1 through $is-columns-amount { &.is-mobile-nth-#{$i} { order: $i; } }
-  };
-  @media #{$is-tablet} {
-    @for $i from 1 through $is-columns-amount { &.is-tablet-nth-#{$i} { order: $i; } }
-  };
-  @media #{$is-desktop} {
-    @for $i from 1 through $is-columns-amount { &.is-desktop-nth-#{$i} { order: $i; } }
+  @if $is-column-order-enabled == "yes" and $critical == "no" or $is-column-order-enabled == "yes" and $critical == "full" {
+    @for $i from 1 through $is-columns-amount { &:nth-child(#{$i}) {
+      order: $i * 10 + 1;
+      &:nth-child(#{$i - 1}) {
+        order: ($i + 1) * 10;
+      }
+    } }
+    @for $i from 1 through $is-columns-amount {
+      &.is-nth-#{$i} {
+        order: $i * 10;
+        &:nth-child(#{$i - 1}) {
+          order: ($i + 1) * 10;
+        }
+      }
+    }
+    @media #{$is-mobile} {
+      @for $i from 1 through $is-columns-amount { &.is-mobile-nth-#{$i} {
+        order: $i * 10;
+        &:nth-child(#{$i - 1}) {
+          order: ($i + 1) * 10;
+        }
+      } }
+    };
+    @media #{$is-tablet} {
+      @for $i from 1 through $is-columns-amount { &.is-tablet-nth-#{$i} {
+        order: $i * 10;
+        &:nth-child(#{$i - 1}) {
+          order: ($i + 1) * 10;
+        }
+      } }
+    };
+    @media #{$is-desktop} {
+      @for $i from 1 through $is-columns-amount { &.is-desktop-nth-#{$i} {
+        order: $i * 10;
+        &:nth-child(#{$i - 1}) {
+          order: ($i + 1) * 10;
+        }
+      } }
+    };
   };
 
   // padding
-  &.is-padding-small { padding: 0 $is-column-padding-small; }
-  &.is-padding-medium { padding: 0 $is-column-padding-medium; }
-  &.is-padding-large { padding: 0 $is-column-padding-large; }
-  @media #{$is-mobile} {
-    &.is-mobile-padding-small { padding: 0 $is-column-padding-small; }
-    &.is-mobile-padding-medium { padding: 0 $is-column-padding-medium; }
-    &.is-mobile-padding-large { padding: 0 $is-column-padding-large; }
-  };
-  @media #{$is-tablet} {
-    &.is-tablet-padding-small { padding: 0 $is-column-padding-small; }
-    &.is-table-padding-medium { padding: 0 $is-column-padding-medium; }
-    &.is-table-padding-large { padding: 0 $is-column-padding-large; }
-  };
-  @media #{$is-desktop} {
-    &.is-desktop-padding-small { padding: 0 $is-column-padding-small; }
-    &.is-desktop-padding-medium { padding: 0 $is-column-padding-medium; }
-    &.is-desktop-padding-large { padding: 0 $is-column-padding-large; }
-  };
+  @if $critical == "no" or $critical == "full" {
+    &.is-padding-small { padding: 0 $is-column-padding-small; }
+    &.is-padding-medium { padding: 0 $is-column-padding-medium; }
+    &.is-padding-large { padding: 0 $is-column-padding-large; }
+    @media #{$is-mobile} {
+      &.is-mobile-padding-small { padding: 0 $is-column-padding-small; }
+      &.is-mobile-padding-medium { padding: 0 $is-column-padding-medium; }
+      &.is-mobile-padding-large { padding: 0 $is-column-padding-large; }
+    }
+    @media #{$is-tablet} {
+      &.is-tablet-padding-small { padding: 0 $is-column-padding-small; }
+      &.is-table-padding-medium { padding: 0 $is-column-padding-medium; }
+      &.is-table-padding-large { padding: 0 $is-column-padding-large; }
+    }
+    @media #{$is-desktop} {
+      &.is-desktop-padding-small { padding: 0 $is-column-padding-small; }
+      &.is-desktop-padding-medium { padding: 0 $is-column-padding-medium; }
+      &.is-desktop-padding-large { padding: 0 $is-column-padding-large; }
+    }
+  }
 }

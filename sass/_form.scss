@@ -49,6 +49,10 @@ input[type="search"], input[type="tel"], input[type="url"], select, textarea {
     border-bottom: $border-width solid $border-color;
     border-radius: 0;
 
+    &:focus, &:active {
+      border-color: $is-input-border-color-focus;
+    }
+
     &.is-transparent {
       padding-left: 0;
     }
@@ -60,11 +64,54 @@ input[type="search"], input[type="tel"], input[type="url"], select, textarea {
   &.is-info { border-color: $color-info; }
 }
 
+input[type="text"], input[type="date"], input[type="email"], input[type="number"],
+input[type="search"], input[type="tel"], input[type="url"], select {
+  &.is-grouped {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+    border-right: 0;
+    margin: 0;
+
+    &.is-outline {
+      border-right-width: 0;
+    }
+
+    + input[type="text"], + input[type="date"], + input[type="email"], + input[type="number"],
+    input[type="search"], + input[type="tel"], + input[type="url"], + select, + .is-btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-right: 50px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"48px\" height=\"48px\" viewBox=\"0 0 48 48\"><path fill=\"#{$is-select-arrow-color}\" d=\"M24,36c-0.512,0-1.023-0.195-1.414-0.586L1.172,14L4,11.171l20,20l20-20L46.828,14L25.414,35.414,C25.023,35.805,24.512,36,24,36z\"></path></svg>");
+  background-size: 50px 20px;
+  background-repeat: no-repeat;
+  background-position: center right;
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+  &::-ms-expand {
+    display: none;
+  }
+
+  &.is-grouped { margin-right: -5px; }
+}
+
 textarea {
   border-radius: $is-textarea-border-radius;
   max-width: 100%;
   width: 100%;
   min-height: 300px;
+  box-shadow: none;
 }
 
 input[type="radio"], input[type="checkbox"] {
@@ -96,7 +143,7 @@ input[type="radio"], input[type="checkbox"] {
   }
 }
 
-input[type="radio"] {
+input[type="radio"]:not(.is-trigger) {
   + label span {
     height: $is-radio-size;
     width: $is-radio-size;
@@ -118,7 +165,7 @@ input[type="radio"] {
   }
 }
 
-input[type="checkbox"] {
+input[type="checkbox"]:not(.is-trigger) {
   + label span {
     height: $is-checkbox-size;
     width: $is-checkbox-size;
@@ -148,6 +195,38 @@ input[type="checkbox"] {
 
   &.is-glow:checked + label span:before, &.is-glow:checked + label span:after {
     box-shadow: $is-input-checked-glow-factor $is-input-checked-color;
+  }
+}
+
+input[type="checkbox"].is-trigger, input[type="radio"].is-trigger {
+  + label span {
+    position: relative;
+    height: $is-trigger-height;
+    width: $is-trigger-width;
+    border-radius: $is-trigger-border-radius;
+    background: $is-trigger-color;
+    border: $is-trigger-border;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: - $is-trigger-indicator-height / 2;
+      height: $is-trigger-indicator-height;
+      width: $is-trigger-indicator-width;
+      border-radius: $is-trigger-indicator-border-radius;
+      background: $is-trigger-indicator-color;
+      border: $is-trigger-indicator-border;
+      @extend .is-transition-short;
+    }
+  }
+
+  &:checked + label span:before {
+    left: $is-trigger-width - $is-trigger-indicator-width;
+    background: $is-trigger-indicator-active-color;
+    border: $is-trigger-indicator-active-border;
+    box-shadow: $is-trigger-indicator-active-glow-factor $is-trigger-indicator-active-glow-color;
   }
 }
 

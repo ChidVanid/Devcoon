@@ -1,0 +1,38 @@
+@if $is-tooltip-enabled == "yes" {
+  .has-tooltip {
+    .is-tooltip {
+      opacity: 0;
+      pointer-events: none;
+      font-size: $is-tooltip-font-size;
+      color: $is-tooltip-font-color;
+      max-width: $is-tooltip-max-width;
+      padding: $is-tooltip-padding;
+      border-radius: $is-tooltip-border-radius;
+      background: rgba($is-tooltip-color, $is-tooltip-opacity);
+      position: absolute;
+      transform: translate(-50%, -100%);
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: - $is-tooltip-arrow-height;
+        left: 50%;
+        margin-left: $is-tooltip-arrow-width / 2;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: $is-tooltip-arrow-height ($is-tooltip-arrow-width / 2) 0 ($is-tooltip-arrow-width / 2);
+        border-color: $is-tooltip-color transparent transparent transparent;
+        opacity: $is-tooltip-opacity;
+      }
+    }
+
+    &:hover, &:focus {
+      .is-tooltip {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+}

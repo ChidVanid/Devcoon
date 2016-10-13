@@ -1,0 +1,43 @@
+@if $is-notification-enabled == "yes" {
+  .is-notification {
+    position: relative;
+    border-radius: $is-notification-border-radius;
+    background: $is-notification-color;
+    padding: $is-notification-padding;
+    padding-right: $is-notification-close-dimensions + 10;
+    margin: $is-notification-margin;
+    @each $name, $color in $color-map { &.is-#{$name} {
+      background-color: $color;
+      color: darken($color, $is-notification-font-darken);
+
+      > * { color: darken($color, $is-notification-font-darken); }
+    } }
+
+    .is-close {
+      height: $is-notification-close-dimensions;
+      width: $is-notification-close-dimensions;
+      background: rgba($is-notification-close-color, $is-notification-close-opacity);
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      border-bottom-left-radius: $is-notification-border-radius;
+      border-top-right-radius: $is-notification-border-radius;
+
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: - $is-notification-close-icon-stroke-height / 2;
+        margin-left: - $is-notification-close-icon-stroke-width / 2;
+        height: $is-notification-close-icon-stroke-height;
+        width: $is-notification-close-icon-stroke-width;
+        background: $is-notification-close-icon-color;
+      }
+
+      &:before { transform: rotate(45deg); }
+      &:after { transform: rotate(-45deg); }
+    }
+  }
+}

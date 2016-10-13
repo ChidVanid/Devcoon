@@ -1,0 +1,41 @@
+@if $is-tabmenu-enabled == "yes" {
+  .is-tabmenu {
+    margin: $is-tabmenu-margin;
+
+    .is-tabmenu-navigation {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      align-content: flex-end;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-bottom:$is-tabmenu-navigation-border;
+
+      > li {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        -ms-flex-negative: 1;
+        flex-shrink: 1;
+        margin: $is-tabmenu-navigation-margin;
+        padding: $is-tabmenu-navigation-padding;
+        border: $is-tabmenu-navigation-border;
+        border-bottom: none;
+        border-top-left-radius: $is-tabmenu-content-border-radius;
+        border-top-right-radius: $is-tabmenu-content-border-radius;
+        background: $is-tabmenu-navigation-background;
+      }
+    }
+
+    .is-tabmenu-content {
+      background: $is-tabmenu-content-background;
+      padding: $is-tabmenu-content-padding;
+      border: $is-tabmenu-content-border;
+      border-bottom-left-radius: $is-tabmenu-content-border-radius;
+      border-bottom-right-radius: $is-tabmenu-content-border-radius;
+      border-top: 0;
+    }
+  }
+}

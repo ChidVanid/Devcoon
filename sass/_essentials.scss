@@ -2,12 +2,21 @@
   box-sizing: border-box;
 }
 
+body {
+  @if $critical == "no" or $critical == "full" {
+    font-family: $font-non-critical;
+  } @else if $critical == "yes" {
+    font-family: $font-critical;
+  }
+}
+
 .is-transition-short { transition: all $is-transition-short-duration $is-transition-timing; }
 .is-transition-medium { transition: all $is-transition-medium-duration $is-transition-timing; }
 .is-transition-long { transition: all $is-transition-long-duration $is-transition-timing; }
 
 .is-disabled {
   opacity: $is-disabled-opacity;
+  pointer-events: none;
 }
 
 .clearfix:after {
@@ -20,6 +29,14 @@
 
 img, svg {
   max-width: 100%;
+}
+
+hr {
+  border: 0;
+  background-color: $is-hr-default-color;
+  height: $is-hr-height;
+  margin: $is-hr-margin;
+  @each $name, $color in $color-map { &.is-#{$name} { background-color: $color; } }
 }
 
 ::-moz-selection {
