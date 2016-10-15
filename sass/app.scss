@@ -1,6 +1,8 @@
 $critical: "full";
 
-@import "https://fonts.googleapis.com/css?family=Open+Sans:400,600";
+@if $font-import-link != "" {
+  @import $font-import-link;
+}
 
 @import "mixins";
 @import "variables";
