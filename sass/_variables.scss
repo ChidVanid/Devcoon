@@ -191,7 +191,8 @@ $is-input-border-color-focus: $color-primary;
 $is-input-placeholder-color: $border-color;
 $is-input-checked-color: $color-primary;
 $is-input-checked-glow-factor: $is-btn-glow-factor;
-$is-input-padding: 15px 25px;
+$is-input-padding: 0 25px;
+$is-input-height: 50px;
 $is-input-fontsize: 18px;
 
 $is-input-border-radius: "half"; // if set to half, than button borders on the left and right are completly round. otherwise use px value.

@@ -129,9 +129,12 @@
 
     &.is-form {
       padding: $is-input-padding;
+      height: $is-input-height;
       font-size: $is-input-fontsize;
       margin-bottom: 0;
+      box-sizing: content-box;
       vertical-align: top;
+      line-height: $is-input-height;
 
       &.is-grouped {
         margin-right: -5px;

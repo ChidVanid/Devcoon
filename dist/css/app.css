@@ -1430,10 +1430,13 @@ summary {
       border-bottom-left-radius: 0;
       margin-left: 0; }
   .is-btn.is-form {
-    padding: 15px 25px;
+    padding: 0 25px;
+    height: 50px;
     font-size: 18px;
     margin-bottom: 0;
-    vertical-align: top; }
+    box-sizing: content-box;
+    vertical-align: top;
+    line-height: 50px; }
     .is-btn.is-form.is-grouped {
       margin-right: -5px; }
   .is-btn.is-circle {
@@ -1674,7 +1677,9 @@ input[type="search"], input[type="tel"], input[type="url"], select, textarea {
   color: #191919;
   background: #ffffff;
   border: 2px solid #1f2b4a;
-  padding: 15px 25px;
+  padding: 0 25px;
+  height: 50px;
+  box-sizing: content-box;
   outline: 0;
   font-size: 18px;
   border-radius: 45px; }
@@ -1726,7 +1731,8 @@ input[type="search"].is-grouped, input[type="tel"].is-grouped, input[type="url"]
   border-bottom-right-radius: 0;
   margin-right: 0;
   border-right: 0;
-  margin: 0; }
+  margin: 0;
+  vertical-align: top; }
   input[type="text"].is-grouped.is-outline, input[type="date"].is-grouped.is-outline, input[type="email"].is-grouped.is-outline, input[type="number"].is-grouped.is-outline,
   input[type="search"].is-grouped.is-outline, input[type="tel"].is-grouped.is-outline, input[type="url"].is-grouped.is-outline, select.is-grouped.is-outline {
     border-right-width: 0; }
@@ -1755,10 +1761,12 @@ select {
   -moz-appearance: none;
   -webkit-appearance: none;
   padding-right: 50px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48"><path fill="#1ef1b7" d="M24,36c-0.512,0-1.023-0.195-1.414-0.586L1.172,14L4,11.171l20,20l20-20L46.828,14L25.414,35.414,C25.023,35.805,24.512,36,24,36z"></path></svg>');
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='#1ef1b7' d='M24,36c-0.512,0-1.023-0.195-1.414-0.586L1.172,14L4,11.171l20,20l20-20L46.828,14L25.414,35.414,C25.023,35.805,24.512,36,24,36z'%3E%3C/path%3E%3C/svg%3E");
   background-size: 50px 20px;
   background-repeat: no-repeat;
-  background-position: center right; }
+  background-position: center right;
+  box-sizing: content-box;
+  cursor: pointer; }
   select:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 #000; }
@@ -1772,7 +1780,8 @@ textarea {
   max-width: 100%;
   width: 100%;
   min-height: 300px;
-  box-shadow: none; }
+  box-shadow: none;
+  box-sizing: border-box; }
 
 input[type="radio"], input[type="checkbox"] {
   display: none;

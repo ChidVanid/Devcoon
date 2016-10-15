@@ -23,6 +23,8 @@ input[type="search"], input[type="tel"], input[type="url"], select, textarea {
   background: $is-input-background;
   border: $border-width solid $border-color;
   padding: $is-input-padding;
+  height: $is-input-height;
+  box-sizing: content-box;
   outline: 0;
   font-size: $is-input-fontsize;
   @if $is-input-border-radius == "half" {
@@ -72,6 +74,7 @@ input[type="search"], input[type="tel"], input[type="url"], select {
     margin-right: 0;
     border-right: 0;
     margin: 0;
+    vertical-align: top;
 
     &.is-outline {
       border-right-width: 0;
@@ -90,10 +93,12 @@ select {
   -moz-appearance: none;
   -webkit-appearance: none;
   padding-right: 50px;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"48px\" height=\"48px\" viewBox=\"0 0 48 48\"><path fill=\"#{$is-select-arrow-color}\" d=\"M24,36c-0.512,0-1.023-0.195-1.414-0.586L1.172,14L4,11.171l20,20l20-20L46.828,14L25.414,35.414,C25.023,35.805,24.512,36,24,36z\"></path></svg>");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='#{$is-select-arrow-color}' d='M24,36c-0.512,0-1.023-0.195-1.414-0.586L1.172,14L4,11.171l20,20l20-20L46.828,14L25.414,35.414,C25.023,35.805,24.512,36,24,36z'%3E%3C/path%3E%3C/svg%3E");
   background-size: 50px 20px;
   background-repeat: no-repeat;
   background-position: center right;
+  box-sizing: content-box;
+  cursor: pointer;
 
   &:-moz-focusring {
     color: transparent;
@@ -112,6 +117,7 @@ textarea {
   width: 100%;
   min-height: 300px;
   box-shadow: none;
+  box-sizing: border-box;
 }
 
 input[type="radio"], input[type="checkbox"] {
