@@ -18,7 +18,7 @@
   @if $has-columns-margin-enabled == "yes" and $critical == "no" or $has-columns-margin-enabled == "yes" and $critical == "full" {
     @if $has-columns-margin-small-enabled == "yes" {
       &.is-margin-small {
-        left: (-$has-columns-margin-small);
+        margin: 0 (-$has-columns-margin-small);
         > .is-column {
           margin: 0 $has-columns-margin-small;
           @for $i from 0 through $is-columns-amount { &.is-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-small * 2); } }
@@ -37,7 +37,7 @@
 
     @if $has-columns-margin-medium-enabled == "yes" {
       &.is-margin-medium {
-        left: (-$has-columns-margin-medium);
+        margin: 0 (-$has-columns-margin-medium);
         > .is-column {
           margin: 0 $has-columns-margin-medium;
           @for $i from 0 through $is-columns-amount { &.is-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-medium * 2); } }
@@ -56,7 +56,7 @@
 
     @if $has-columns-margin-large-enabled == "yes" {
       &.is-margin-large {
-        left: (-$has-columns-margin-large);
+        margin: 0 (-$has-columns-margin-large);
         > .is-column {
           margin: 0 $has-columns-margin-large;
           @for $i from 0 through $is-columns-amount { &.is-#{$i} { width: 100% / $is-columns-amount * $i - ($has-columns-margin-large * 2); } }
