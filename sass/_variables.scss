@@ -82,9 +82,6 @@ $is-wrapper-margin-small: 25px;
 $is-wrapper-margin-medium: 50px;
 $is-wrapper-margin-large: 75px;
 
-$is-wrapper-primary: $color-primary;
-$is-wrapper-secondary: $color-secondary;
-
 // buttons
 $is-btn-color: $white;
 $is-btn-outline-color: $color-secondary;
@@ -153,8 +150,6 @@ $is-h6-weight: 400;
 
 $is-p-weight: 400;
 $is-p-default: $black;
-$is-p-primary: $color-primary;
-$is-p-secondary: $color-secondary;
 $is-p-small: 14px;
 $is-p-medium: 18px;
 $is-p-large: 24px;
@@ -176,7 +171,7 @@ $is-listitem-margin-bottom: 10px;
 $is-listitem-padding-left: 25px;
 $is-listitem-dot-spacing: 5px;
 $is-listitem-dot-dimensions: 15px;
-$is-listitem-dot-color: $color-primary;
+$is-listitem-dot-background: $color-primary;
 $is-listitem-dot-border-radius: 50%;
 
 // form
@@ -206,19 +201,19 @@ $is-textarea-border-radius: $border-radius;
 $is-trigger-width: 50px;
 $is-trigger-height: 10px;
 $is-trigger-border: 0;
-$is-trigger-color: $color-secondary;
+$is-trigger-background: $color-secondary;
 $is-trigger-border-radius: $is-trigger-height / 2;
 
 $is-trigger-indicator-height: 25px;
 $is-trigger-indicator-width: 25px;
-$is-trigger-indicator-color: $color-secondary;
+$is-trigger-indicator-background: $color-secondary;
 $is-trigger-indicator-border: 0;
 $is-trigger-indicator-border-radius: $is-trigger-indicator-height / 2;
 
-$is-trigger-indicator-active-color: $color-primary;
+$is-trigger-indicator-active-background: $color-primary;
 $is-trigger-indicator-active-border: 0;
 $is-trigger-indicator-active-glow-factor: $is-btn-glow-factor;
-$is-trigger-indicator-active-glow-color: $is-trigger-indicator-active-color;
+$is-trigger-indicator-active-glow-color: $is-trigger-indicator-active-background;
 
 // table
 $is-table-color: $black;
@@ -233,12 +228,12 @@ $is-notification-enabled: "yes"; // if you dont need notification style use "no"
 $is-notification-margin: 0 0 25px;
 
 $is-notification-padding: 25px;
-$is-notification-color: #eeeeee;
+$is-notification-background: #eeeeee;
 $is-notification-font-darken: 30%;
 $is-notification-border-radius: $border-radius;
 
 $is-notification-close-dimensions: 25px;
-$is-notification-close-color: $black;
+$is-notification-close-background: $black;
 $is-notification-close-opacity: 0.25;
 $is-notification-close-icon-color: $white;
 $is-notification-close-icon-stroke-height: 2px;
@@ -247,12 +242,12 @@ $is-notification-close-icon-stroke-width: 10px;
 // tooltips
 $is-tooltip-enabled: "yes"; // if you dont need tooltip style use "no", if you need it use "yes"
 
-$is-tooltip-color: $color-primary;
+$is-tooltip-background: $color-primary;
 $is-tooltip-opacity: 0.9;
 $is-tooltip-padding: 10px;
 $is-tooltip-max-width: 200px;
 $is-tooltip-border-radius: $border-radius;
-$is-tooltip-font-color: $color-secondary;
+$is-tooltip-color: $color-secondary;
 $is-tooltip-font-size: 14px;
 
 $is-tooltip-arrow-height: 5px;
@@ -277,18 +272,18 @@ $is-tabmenu-content-border-radius: $border-radius;
 $is-accordion-enabled: "yes"; // if you dont need accordion style use "no", if you need it use "yes"
 $is-accordion-margin: 0 0 25px;
 
-$is-accordion-trigger-color: $color-secondary;
-$is-accordion-trigger-font-color: $white;
+$is-accordion-trigger-background: $color-secondary;
+$is-accordion-trigger-color: $white;
 $is-accordion-trigger-padding: 10px 25px;
 $is-accordion-trigger-border: 0;
 $is-accordion-trigger-border-radius: 0;
 
 $is-accordion-content-padding: 10px 25px;
 $is-accordion-content-border: $border-width solid $border-color;
-$is-accordion-content-color: $white;
+$is-accordion-content-background: $white;
 $is-accordion-content-border-radius: 0;
 
-$is-accordion-icon-color: $white;
+$is-accordion-icon-background: $white;
 $is-accordion-icon-stroke-height: 2px;
 $is-accordion-icon-stroke-width: 15px;
 $is-accordion-icon-right-space: 25px;
@@ -296,11 +291,11 @@ $is-accordion-icon-right-space: 25px;
 // modal
 $is-modal-enabled: "yes"; // if you dont need modal style use "no", if you need it use "yes"
 
-$is-modal-color: $black;
+$is-modal-background: $black;
 $is-modal-opacity: 0.8;
 $is-modal-gardient: "yes"; // if you want a radial gardient use "yes"
 
-$is-modal-content-color: $white;
+$is-modal-content-background: $white;
 $is-modal-content-border: $border-width solid $border-color;
 $is-modal-content-border-radius: $border-radius;
 $is-modal-content-padding: 15px;
@@ -308,12 +303,12 @@ $is-modal-content-margin: 25px auto 0;
 $is-modal-content-max-width: 400px;
 
 $is-modal-close-dimensions: 35px;
-$is-modal-close-color: $color-primary;
+$is-modal-close-background: $color-primary;
 $is-modal-close-border: 0;
 $is-modal-close-border-radius: 50%;
-$is-modal-close-color-hover: $color-secondary;
+$is-modal-close-background-hover: $color-secondary;
 
-$is-modal-close-icon-color: $white;
+$is-modal-close-icon-background: $white;
 $is-modal-close-icon-height: 2px;
 $is-modal-close-icon-width: 20px;
 

@@ -2,7 +2,7 @@
   .is-notification {
     position: relative;
     border-radius: $is-notification-border-radius;
-    background: $is-notification-color;
+    background: $is-notification-background;
     padding: $is-notification-padding;
     padding-right: $is-notification-close-dimensions + 10;
     margin: $is-notification-margin;
@@ -16,7 +16,7 @@
     .is-close {
       height: $is-notification-close-dimensions;
       width: $is-notification-close-dimensions;
-      background: rgba($is-notification-close-color, $is-notification-close-opacity);
+      background: rgba($is-notification-close-background, $is-notification-close-opacity);
       position: absolute;
       display: block;
       top: 0;

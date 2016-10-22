@@ -11,13 +11,13 @@
     z-index: 999;
 
     @if $is-modal-gardient == "yes" {
-      background: radial-gradient(ellipse at center, rgba($is-modal-color, $is-modal-opacity - 0.3) 0%,rgba($is-modal-color, $is-modal-opacity) 100%);
+      background: radial-gradient(ellipse at center, rgba($is-modal-background, $is-modal-opacity - 0.3) 0%,rgba($is-modal-background, $is-modal-opacity) 100%);
     } else {
-      background: rgba($is-modal-color, $is-modal-opacity);
+      background: rgba($is-modal-background, $is-modal-opacity);
     }
 
     .is-modal-content {
-      background: $is-modal-content-color;
+      background: $is-modal-content-background;
       border: $is-modal-content-border;
       border-radius: $is-modal-content-border-radius;
       padding: $is-modal-content-padding;
@@ -38,10 +38,10 @@
       width: $is-modal-close-dimensions;
       border-radius: $is-modal-close-border-radius;
       border: $is-modal-close-border;
-      background: $is-modal-close-color;
+      background: $is-modal-close-background;
 
       &:hover {
-        background: $is-modal-close-color-hover;
+        background: $is-modal-close-background-hover;
       }
 
       &:before, &:after {
@@ -53,7 +53,7 @@
         margin-left: - $is-modal-close-icon-width / 2;
         height: $is-modal-close-icon-height;
         width: $is-modal-close-icon-width;
-        background: $is-modal-close-icon-color;
+        background: $is-modal-close-icon-background;
       }
 
       &:before { transform: rotate(45deg); }

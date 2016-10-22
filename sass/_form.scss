@@ -210,7 +210,7 @@ input[type="checkbox"].is-trigger, input[type="radio"].is-trigger {
     height: $is-trigger-height;
     width: $is-trigger-width;
     border-radius: $is-trigger-border-radius;
-    background: $is-trigger-color;
+    background: $is-trigger-background;
     border: $is-trigger-border;
 
     &:before {
@@ -222,7 +222,7 @@ input[type="checkbox"].is-trigger, input[type="radio"].is-trigger {
       height: $is-trigger-indicator-height;
       width: $is-trigger-indicator-width;
       border-radius: $is-trigger-indicator-border-radius;
-      background: $is-trigger-indicator-color;
+      background: $is-trigger-indicator-background;
       border: $is-trigger-indicator-border;
       @extend .is-transition-short;
     }
@@ -230,7 +230,7 @@ input[type="checkbox"].is-trigger, input[type="radio"].is-trigger {
 
   &:checked + label span:before {
     left: $is-trigger-width - $is-trigger-indicator-width;
-    background: $is-trigger-indicator-active-color;
+    background: $is-trigger-indicator-active-background;
     border: $is-trigger-indicator-active-border;
     box-shadow: $is-trigger-indicator-active-glow-factor $is-trigger-indicator-active-glow-color;
   }

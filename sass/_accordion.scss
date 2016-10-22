@@ -4,7 +4,7 @@
 
     .is-accordion-trigger {
       position: relative;
-      background: $is-accordion-trigger-color;
+      background: $is-accordion-trigger-background;
       border: $is-accordion-trigger-border;
       padding: $is-accordion-trigger-padding;
       border-radius: $is-accordion-trigger-border-radius;
@@ -12,14 +12,14 @@
 
       > * {
         margin: 0;
-        color: $is-accordion-trigger-font-color;
+        color: $is-accordion-trigger-color;
       }
 
       &:before, &:after {
         content: "";
         display: block;
         position: absolute;
-        background: $is-accordion-icon-color;
+        background: $is-accordion-icon-background;
         height: $is-accordion-icon-stroke-height;
         width: $is-accordion-icon-stroke-width;
         top: 50%;
@@ -40,7 +40,7 @@
     .is-accordion-content {
       padding: $is-accordion-content-padding;
       border: $border-width solid $border-color;
-      background: $is-accordion-content-color;
+      background: $is-accordion-content-background;
       border-radius: $is-accordion-trigger-border-radius;
 
       > *:last-child {

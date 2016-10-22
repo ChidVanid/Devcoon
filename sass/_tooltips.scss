@@ -4,11 +4,11 @@
       opacity: 0;
       pointer-events: none;
       font-size: $is-tooltip-font-size;
-      color: $is-tooltip-font-color;
+      color: $is-tooltip-color;
       max-width: $is-tooltip-max-width;
       padding: $is-tooltip-padding;
       border-radius: $is-tooltip-border-radius;
-      background: rgba($is-tooltip-color, $is-tooltip-opacity);
+      background: rgba($is-tooltip-background, $is-tooltip-opacity);
       position: absolute;
       transform: translate(-50%, -100%);
 
@@ -23,7 +23,7 @@
         height: 0;
         border-style: solid;
         border-width: $is-tooltip-arrow-height ($is-tooltip-arrow-width / 2) 0 ($is-tooltip-arrow-width / 2);
-        border-color: $is-tooltip-color transparent transparent transparent;
+        border-color: $is-tooltip-background transparent transparent transparent;
         opacity: $is-tooltip-opacity;
       }
     }

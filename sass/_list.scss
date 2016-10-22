@@ -23,7 +23,7 @@ ul:not(.is-tabmenu-navigation) {
       margin-left: - $is-listitem-padding-left - $is-listitem-dot-spacing;
       height: $is-listitem-dot-dimensions;
       width: $is-listitem-dot-dimensions;
-      background: $is-listitem-dot-color;
+      background: $is-listitem-dot-background;
       border-radius: $is-listitem-dot-border-radius;
     }
   }
