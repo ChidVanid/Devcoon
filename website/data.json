@@ -1,0 +1,286 @@
+[
+  {
+    "id": 1,
+    "selector": "is-accordion",
+    "markup": "<div class=\"is-accordion\"><div class=\"is-accordion-trigger\"><h3>Trigger</h3></div><div class=\"is-accordion-content\">Content</div></div>",
+    "modifiers": [],
+    "description": ""
+  },
+  {
+    "id": 2,
+    "selector": "is-btn",
+    "markup": "<a href=\"#\" class=\"is-btn\">Button</a>",
+    "modifiers": [
+      "is-fullwidth",
+      "is-small",
+      "is-large",
+      "is-primary",
+      "is-secondary",
+      "is-glow",
+      "is-outline",
+      "is-grouped",
+      "is-form",
+      "is-circle"
+    ],
+    "description": ""
+  },
+  {
+    "id": 3,
+    "selector": "is-container",
+    "markup": "<div class=\"is-container\">Container</a>",
+    "modifiers": [
+      "is-split"
+    ],
+    "description": ""
+  },
+  {
+    "id": 4,
+    "selector": "label",
+    "markup": "<label></label>",
+    "modifiers": [
+      "is-error",
+      "is-danger",
+      "is-success",
+      "is-info",
+      "is-top"
+    ],
+    "description": ""
+  },
+  {
+    "id": 5,
+    "selector": "input",
+    "markup": "<input type=\"text\" />",
+    "modifiers": [
+      "is-glow",
+      "is-transparent",
+      "is-line",
+      "is-error",
+      "is-danger",
+      "is-success",
+      "is-info",
+      "is-grouped",
+      "is-outline"
+    ],
+    "description": ""
+  },
+  {
+    "id": 6,
+    "selector": "checkbox",
+    "markup": "<input type=\"checkbox\" />",
+    "modifiers": [
+      "is-glow",
+      "is-transparent",
+      "is-error",
+      "is-danger",
+      "is-success",
+      "is-info"
+    ],
+    "description": ""
+  },
+  {
+    "id": 6,
+    "selector": "checkbox",
+    "markup": "<input type=\"checkbox\" /><label><span></span>Text</label>",
+    "modifiers": [
+      "is-glow",
+      "is-transparent",
+      "is-error",
+      "is-danger",
+      "is-success",
+      "is-info",
+      "is-trigger"
+    ],
+    "description": ""
+  },
+  {
+    "id": 7,
+    "selector": "radiobutton",
+    "markup": "<input type=\"radio\" /><label><span></span>Text</label>",
+    "modifiers": [
+      "is-glow",
+      "is-transparent",
+      "is-error",
+      "is-danger",
+      "is-success",
+      "is-info",
+      "is-trigger"
+    ],
+    "description": ""
+  },
+  {
+    "id": 8,
+    "selector": "has-columns",
+    "markup": "<div class=\"has-columns\"></div>",
+    "modifiers": [
+      "is-multiline",
+      "is-top",
+      "is-middle",
+      "is-bottom",
+      "is-baseline",
+      "is-fullwidth",
+      "is-margin-small",
+      "is-margin-medium",
+      "is-margin-large"
+    ],
+    "description": ""
+  },
+  {
+    "id": 9,
+    "selector": "is-column",
+    "markup": "<div class=\"is-column\"></div>",
+    "modifiers": [
+      "is-small",
+      "is-mobile-small",
+      "is-tablet-small",
+      "is-desktop-small",
+      "is-X",
+      "is-mobile-X",
+      "is-tablet-X",
+      "is-desktop-X",
+      "is-nth-X"
+      "is-mobile-nth-X",
+      "is-tablet-nth-X",
+      "is-desktop-nth-X",
+      "is-padding-small",
+      "is-padding-medium",
+      "is-padding-large",
+      "is-padding-mobile-small",
+      "is-padding-mobile-medium",
+      "is-padding-mobile-large",
+      "is-padding-tablet-small",
+      "is-padding-tablet-medium",
+      "is-padding-tablet-large",
+      "is-padding-desktop-small",
+      "is-padding-desktop-medium",
+      "is-padding-desktop-large"
+    ],
+    "description": ""
+  },
+  {
+    "id": 10,
+    "selector": "has-modal",
+    "markup": "<div class=\"has-modal\"><a class=\"is-modal-close\"></a><div class=\"is-modal\"></div></div>",
+    "modifiers": [],
+    "description": ""
+  },
+  {
+    "id": 11,
+    "selector": "is-notification",
+    "markup": "<div class=\"is-notification\"><a class=\"is-notification-close\"></a></div>",
+    "modifiers": [
+      "is-X"
+    ],
+    "description": "Classnames for X depend on color map in variables"
+  },
+  {
+    "id": 12,
+    "selector": "is-tabmenu",
+    "markup": "<div class=\"is-tabmenu\"><ul class=\"is-tabmenu-navigation\"><li><a href=\"#\">Link 1</a></li><li><a href=\"#\">Link 2</a></li></ul><div class=\"is-tabmenu-content\"><div>Content 1</div><div class=\"is-hidden\">Content 2</div></div>",
+    "modifiers": [
+      "is-X"
+    ],
+    "description": "To handle the visibility of the content simply use is-hidden"
+  },
+  {
+    "id": 13,
+    "selector": "hX",
+    "markup": "<hX>Headline <span>Subheadline</span></hX>",
+    "modifiers": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "is-uppercase",
+      "is-left",
+      "is-right",
+      "is-center",
+      "is-X"
+    ],
+    "description": "Classnames for X depend on color map in variables"
+  },
+  {
+    "id": 14,
+    "selector": "p",
+    "markup": "<p>Text</p>",
+    "modifiers": [
+      "is-small",
+      "is-large",
+      "is-left",
+      "is-right",
+      "is-center",
+      "is-X"
+    ],
+    "description": "Classnames for X depend on color map in variables"
+  },
+  {
+    "id": 15,
+    "selector": "visibility",
+    "markup": "<div class=\"is-hidden\">Hidden</div>",
+    "modifiers": [
+      "is-hidden",
+      "is-hidden-to-mobile",
+      "is-hidden-to-tablet",
+      "is-hidden-to-desktop",
+      "is-hidden-up",
+      "is-mobile-hidden",
+      "is-mobile-hidden-to-tablet",
+      "is-mobile-hidden-to-desktop",
+      "is-mobile-hidden-up",
+      "is-tablet-hidden",
+      "is-tablet-hidden-to-desktop",
+      "is-tablet-hidden-up",
+      "is-desktop-hidden",
+      "is-desktop-hidden-up",
+    ],
+    "description": ""
+  },
+  {
+    "id": 16,
+    "selector": "is-wrapper",
+    "markup": "<div class=\"is-wrapper\"></div>",
+    "modifiers": [
+      "is-split",
+      "is-padding-small",
+      "is-padding-medium",
+      "is-padding-large",
+      "is-padding-top-small",
+      "is-padding-top-medium",
+      "is-padding-top-large",
+      "is-padding-bottom-small",
+      "is-padding-bottom-medium",
+      "is-padding-bottom-large",
+      "is-margin-small",
+      "is-margin-medium",
+      "is-margin-large",
+      "is-margin-top-small",
+      "is-margin-top-medium",
+      "is-margin-top-large",
+      "is-margin-bottom-small",
+      "is-margin-bottom-medium",
+      "is-margin-bottom-large"
+    ],
+    "description": ""
+  },
+  {
+    "id": 17,
+    "selector": "has-wrappers",
+    "markup": "<div class=\"has-wrappers\"><div class=\"is-wrapper is-split\"></div></div>",
+    "modifiers": [],
+    "description": ""
+  },
+  {
+    "id": 18,
+    "selector": "general",
+    "markup": "<div class=\"X\"></div>",
+    "modifiers": [
+      "is-transition-short",
+      "is-transition-medium",
+      "is-transition-long",
+      "is-disabled",
+      "is-clearfix"
+    ],
+    "description": ""
+  }
+]
